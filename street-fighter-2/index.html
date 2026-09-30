@@ -2,64 +2,37 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    
-    <!-- Configuración para ocultar la barra de direcciones de Chrome / Navegador -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#000000">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Super Mario World</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { 
-            width: 100vw; 
-            height: 100vh; 
-            background-color: #000; 
-            overflow: hidden; 
-            touch-action: none;
-            position: fixed;
-        }
-        #game-container { 
-            width: 100vw; 
-            height: 100vh; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #game {
+        html, body {
+            margin: 0;
+            padding: 0;
             width: 100%;
             height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        #game {
+            width: 100vw;
+            height: 100vh;
         }
     </style>
 </head>
 <body>
-    <div id="game-container">
-        <div id="game"></div>
-    </div>
+    <div id="game"></div>
+
     <script type="text/javascript">
         EJS_player = '#game';
         EJS_core = 'snes';
         EJS_gameName = 'Super Mario World';
-        EJS_color = '#4caf50';
+        EJS_color = '#000000';
         EJS_startOnLoaded = true;
-        EJS_fullscreenOnLoaded = true;
-        EJS_browserMode = 'mobile';
-        
-        /* Enlace a la ROM que ya subiste a la raíz de tu repositorio */
-        EJS_gameUrl = '../Super%20Mario%20World%20(USA)%20(1).sfc';
-        
         EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
+        
+        /* Nombre del archivo de la ROM que acabas de subir dentro de esta misma carpeta */
+        EJS_gameUrl = 'Super Mario World (USA) (1).sfc';
     </script>
     <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
-    <script>
-        // Forzar pantalla completa al tocar la pantalla para ocultar la barra del navegador
-        document.addEventListener('touchstart', function() {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen().catch(err => {});
-            }
-        }, { once: true });
-    </script>
 </body>
 </html>
