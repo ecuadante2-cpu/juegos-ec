@@ -3,22 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <!-- Configuración para ocultar la barra de direcciones de Chrome / Navegador -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+    
     <title>Super Mario World</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { 
-            width: 100%; 
-            height: 100%; 
+            width: 100vw; 
+            height: 100vh; 
             background-color: #000; 
             overflow: hidden; 
-            touch-action: none; 
+            touch-action: none;
+            position: fixed;
         }
         #game-container { 
             width: 100vw; 
             height: 100vh; 
             display: flex;
             justify-content: center;
-            align-content: center;
+            align-items: center;
+        }
+        #game {
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -35,11 +47,19 @@
         EJS_fullscreenOnLoaded = true;
         EJS_browserMode = 'mobile';
         
-        /* Enlace directo y 100% funcional a la ROM de Super Mario World */
-        EJS_gameUrl = 'https://raw.githubusercontent.com/crypto-code/Mario-AI/master/Super%20Mario%20World%20(USA).sfc';
+        /* Enlace a la ROM que ya subiste a la raíz de tu repositorio */
+        EJS_gameUrl = '../Super%20Mario%20World%20(USA)%20(1).sfc';
         
         EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
     </script>
     <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+    <script>
+        // Forzar pantalla completa al tocar la pantalla para ocultar la barra del navegador
+        document.addEventListener('touchstart', function() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {});
+            }
+        }, { once: true });
+    </script>
 </body>
 </html>
