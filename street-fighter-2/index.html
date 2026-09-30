@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Street Fighter II</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+            touch-action: none;
+        }
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="game"></div>
+    </div>
+
+    <script type="text/javascript">
+        EJS_player = '#game';
+        EJS_core = 'snes';
+        EJS_gameName = 'Street Fighter II';
+        EJS_color = '#d32f2f';
+        EJS_startOnLoaded = true;
+        EJS_fullscreenOnLoaded = true;
+        EJS_browserMode = 'mobile';
+        
+        EJS_gameUrl = 'https://cdn.jsdelivr.net/gh/RetroArch-ROMs/SNES-ROMs@main/Street%20Fighter%20II%20-%20The%20World%20Warrior%20(USA).sfc';
+        
+        EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
+    </script>
+    <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+
+</body>
+</html>
